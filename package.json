@@ -1,0 +1,25 @@
+{
+  "name": "cuttingboardlumbercalculator",
+  "version": "1.0.0",
+  "description": "Simple tool for determining how much lumber to get for a particular size end-grain cutting board. It also generates a cut list for the cutting board.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougkent/CuttingBoardLumberCalculator.git"
+  },
+  "author": "Doug Kent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougkent/CuttingBoardLumberCalculator/issues"
+  },
+  "homepage": "https://github.com/dougkent/CuttingBoardLumberCalculator#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.0"
+  }
+}
