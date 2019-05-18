@@ -20,7 +20,7 @@ app.use(cors());
 app.use('/graphql', graphqlHTTP({
     schema: schema,
     rootValue: root,
-    graphiql: true,
+    graphiql: false,
 }))
 
 var port = 4000;

@@ -10,9 +10,6 @@ import HelloComponent from './components/Hello.Component';
 
 export const link = createHttpLink({
   uri: "http://localhost:4000/graphql",
-  fetchOptions: {
-    mode: 'no-cors',
-  },
 });
 
 export const client = new ApolloClient({
