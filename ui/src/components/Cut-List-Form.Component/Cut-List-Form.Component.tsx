@@ -4,6 +4,7 @@ import Input from '@material-ui/core/Input';
 
 import './Cut-List-Form.Component.scss';
 import { ICutListVariables } from '../../models/ICutListVariables.Model';
+import CutListComponent from '../Cut-List.Component/Cut-List.Component';
 
 class CutListFormComponent extends Component {
 
@@ -15,10 +16,14 @@ class CutListFormComponent extends Component {
         blockDepth: 0,
     };
 
-    handleChange = (key: string, event: ChangeEvent) => {
-        var element = event.target as HTMLInputElement
-        this.setState({ [key]: element.value });
-        //this.props.onChange(this.state);
+    handleChange = (event: ChangeEvent) => {
+        var element = event.target as HTMLInputElement;
+        var key: string = element.name;
+        var value: number = parseFloat(element.value);
+
+        this.setState({
+            [key]: value
+        });
     }
 
     render() {
@@ -28,20 +33,22 @@ class CutListFormComponent extends Component {
                     Cutting Board Dimensions
                 </h2>
                 <div className="row">
-                    <Input type="number" placeholder="Width" required onChange={(e) => this.handleChange('width', e)} />
+                    <Input type="number" placeholder="Width" name='width' required onChange={this.handleChange} />
                 </div>
                 <div className="row">
-                    <Input type="number" placeholder="Depth" required onChange={(e) => this.handleChange('depth', e)} />
+                    <Input type="number" placeholder="Depth" name='depth' required onChange={this.handleChange} />
                 </div>
                 <div className="row">
-                    <Input type="number" placeholder="Thickness" required onChange={(e) => this.handleChange('thickness', e)} />
+                    <Input type="number" placeholder="Thickness" name='thickness' required onChange={this.handleChange} />
                 </div>
                 <div className="row">
-                    <Input type="number" placeholder="Block Width" required onChange={(e) => this.handleChange('blockWidth', e)} />
+                    <Input type="number" placeholder="Block Width" name='blockWidth' required onChange={this.handleChange} />
                 </div>
                 <div className="row">
-                    <Input type="number" placeholder="Block Depth" required onChange={(e) => this.handleChange('blockDepth', e)} />
+                    <Input type="number" placeholder="Block Depth" name='blockDepth' required onChange={this.handleChange} />
                 </div>
+
+                <CutListComponent variables={this.state} />
             </div>
         )
     }
