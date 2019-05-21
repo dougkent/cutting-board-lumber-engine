@@ -7,7 +7,7 @@ const boardSizeString = Object.keys(board_size_1.BoardSizeEnum)
     .join(', ');
 const schema = graphql_1.buildSchema(`
     type Query {
-        getCutList(width: Int!, depth: Int!, thickness: Int!, blockWidth: Int!, blockDepth: Int!): CutList
+        cutList(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CutList
     }
 
     type CutList {
