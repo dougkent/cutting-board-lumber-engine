@@ -6,8 +6,9 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import './App.scss';
-import HelloComponent from './components/Hello.Component';
-import CuttingBoardFormComponent from './components/Cutting-Board-Form.Component/Cutting-Board-Form.Component';
+import CutListFormComponent from './components/Cut-List-Form.Component/Cut-List-Form.Component';
+import CutListComponent from './components/Cut-List.Component/Cut-List.Component';
+import { ICutListVariables } from './models/ICutListVariables.Model';
 
 export const link = createHttpLink({
   uri: "http://localhost:4000/graphql",
@@ -19,13 +20,19 @@ export const client = new ApolloClient({
 });
 
 class App extends Component {
+  _variables: ICutListVariables | undefined;
+
+  onChange = (variables: ICutListVariables) => {
+    this._variables = variables;
+  }
+
   render() {
     return (
       <div className="container">
         <h1>End Grain Cutting Board Cut List Calculator </h1>
-        <CuttingBoardFormComponent />
+        <CutListFormComponent />
         <ApolloProvider client={client}>
-          <HelloComponent />
+          <CutListComponent />
         </ApolloProvider>
       </div>
     )
