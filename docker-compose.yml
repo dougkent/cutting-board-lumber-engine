@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+	ui-app:
+		image: cutting-board-calc-ui
+		restart: always
+		ports:
+			- "3000:3000"
+		volumes:
+			- ./client:/ui-app
+			- /client/node_modules
+		links:
+			- api-app
+		networks:
+			- cutting-board-calc-network
+	
+	ui-api:
+		image: cutting-board-calc-api
+		restart: always
+		ports:
+			- "4000:4000"
+		volumes:
+			- ./api:/ui-api
+			- /api/node_modules
+		networks:
+			- cutting-board-calc-network
+networks:
+	cutting-board-calc-network:
+		driver: bridge
