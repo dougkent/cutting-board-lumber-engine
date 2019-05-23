@@ -1,10 +1,11 @@
+import { ICutListVariables } from '../models/cut-list-variables';
 import { CutListService } from '../services/cut-list-service';
 
 const service = new CutListService();
 
 const root = {
-    cutList: (width: number, depth: number, thickness: number, blockWidth: number, blockDepth: number) => {
-        return service.getCutList(width, depth, thickness, blockWidth, blockDepth);
+    cutList: (args: ICutListVariables) => {
+        return service.getCutList(args);
     }
 };
 
