@@ -11,5 +11,8 @@ RUN npm i
 #Bundle app source
 COPY . /ui-app/
 
+RUN npm run build
+
 EXPOSE 3000
-CMD ["npm", "start"]
+
+RUN serve -s build -l 3000

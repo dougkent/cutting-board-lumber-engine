@@ -27,9 +27,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container fade-in">
         <ApolloProvider client={client}>
-          <h1>End Grain Cutting Board Cut List Calculator </h1>
+          <h1>End Grain Cutting Board Planning Engine </h1>
           <CutListFormComponent />
         </ApolloProvider>
       </div>

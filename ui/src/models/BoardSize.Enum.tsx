@@ -1,7 +1,7 @@
 export enum BoardSizeEnum {
-    FourQtr,
-    FiveQtr,
-    SixQtr,
-    EightQtr,
-    TwelveQtr
+    FourQtr = "FourQtr",
+    FiveQtr = "FiveQtr",
+    SixQtr = "SixQtr",
+    EightQtr = "EightQtr",
+    TwelveQtr = "TwelveQtr"
 }
