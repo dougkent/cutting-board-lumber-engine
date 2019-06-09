@@ -2,13 +2,13 @@ import React, { Component, ChangeEvent } from 'react';
 
 import Input from '@material-ui/core/Input';
 
-import './Cut-List-Form.Component.scss';
-import { ICutListVariables } from '../../models/ICutListVariables.Model';
-import CutListComponent from '../Cut-List.Component/Cut-List.Component';
+import './engine-form.component.scss';
+import { IEngineRequest } from '../../models/engine-request.model';
+import EngineResultsComponent from '../engine-results.component/engine-results.component';
 
-class CutListFormComponent extends Component {
+class EngineFormComponent extends Component {
 
-    state: ICutListVariables = {
+    state: IEngineRequest = {
         width: 12,
         depth: 10,
         thickness: 1,
@@ -83,10 +83,10 @@ class CutListFormComponent extends Component {
                         onChange={this.handleChange} />
                 </div>
 
-                <CutListComponent variables={this.state} />
+                <EngineResultsComponent variables={this.state} />
             </div>
         )
     }
 }
 
-export default CutListFormComponent;
+export default EngineFormComponent;

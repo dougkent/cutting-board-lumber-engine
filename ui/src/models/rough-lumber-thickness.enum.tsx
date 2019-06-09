@@ -1,4 +1,4 @@
-export enum BoardSizeEnum {
+export enum RoughLumberThicknessEnum {
     FourQtr = "FourQtr",
     FiveQtr = "FiveQtr",
     SixQtr = "SixQtr",

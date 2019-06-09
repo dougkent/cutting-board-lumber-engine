@@ -1,23 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const graphql_1 = require("graphql");
-const board_size_1 = require("../models/board-size");
-const boardSizeString = Object.keys(board_size_1.BoardSizeEnum)
-    .filter((k) => typeof board_size_1.BoardSizeEnum[k] === 'string')
+const rough_lumber_thickness_enum_1 = require("../models/rough-lumber-thickness.enum");
+const roughLumberThickness = Object.keys(rough_lumber_thickness_enum_1.RoughLumberThicknessEnum)
+    .filter((k) => typeof rough_lumber_thickness_enum_1.RoughLumberThicknessEnum[k] === 'string')
     .join(', ');
 const schema = graphql_1.buildSchema(`
     type Query {
-        cutList(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CutList
+        cuttingBoardPlan(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CuttingBoardPlan
     }
 
-    type CutList {
-        boardSize: BoardSize!,
+    type CuttingBoardPlan {
+        roughLumberThickness: RoughLumberThickness!,
         boardFeet: Int!,
-        cuts: [String!]!
+        numberOfPieces: Int!,
+        pieceThickness: Float!,
+        pieceWidth: Float!,
+        pieceLength: Float!,
+        panelCrossCutThickness: Float!,
+        panelWidth: Float!
     }
 
-    enum BoardSize {
-        ${boardSizeString}
+    enum RoughLumberThickness {
+        ${roughLumberThickness}
     }
 `);
 exports.default = schema;

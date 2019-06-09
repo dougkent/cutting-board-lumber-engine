@@ -1,4 +1,4 @@
-export interface ICutListVariables {
+export interface IEngineRequest {
     width: number;
     depth: number;
     thickness: number;

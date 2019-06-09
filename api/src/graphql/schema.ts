@@ -1,23 +1,28 @@
 import { buildSchema } from 'graphql';
-import { BoardSizeEnum } from '../models/board-size';
+import { RoughLumberThicknessEnum } from '../models/rough-lumber-thickness.enum';
 
-const boardSizeString = Object.keys(BoardSizeEnum)
-    .filter((k) => typeof BoardSizeEnum[k as any] === 'string')
+const roughLumberThickness = Object.keys(RoughLumberThicknessEnum)
+    .filter((k) => typeof RoughLumberThicknessEnum[k as any] === 'string')
     .join(', ');
 
 const schema = buildSchema(`
     type Query {
-        cutList(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CutList
+        cuttingBoardPlan(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CuttingBoardPlan
     }
 
-    type CutList {
-        boardSize: BoardSize!,
+    type CuttingBoardPlan {
+        roughLumberThickness: RoughLumberThickness!,
         boardFeet: Int!,
-        cuts: [String!]!
+        numberOfPieces: Int!,
+        pieceThickness: Float!,
+        pieceWidth: Float!,
+        pieceLength: Float!,
+        panelCrossCutThickness: Float!,
+        panelWidth: Float!
     }
 
-    enum BoardSize {
-        ${boardSizeString}
+    enum RoughLumberThickness {
+        ${roughLumberThickness}
     }
 `);
 
