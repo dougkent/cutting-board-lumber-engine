@@ -2,6 +2,16 @@
   "name": "ui",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougkent/cutting-board-lumber-engine.git"
+  },
+  "author": "Doug Kent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougkent/cutting-board-lumber-engine/issues"
+  },
+  "homepage": "https://github.com/dougkent/cutting-board-lumber-engine#readme",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@types/jest": "24.0.13",
