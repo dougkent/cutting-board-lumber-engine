@@ -5,14 +5,14 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import './App.scss';
-import CutListFormComponent from './components/Cut-List-Form.Component/Cut-List-Form.Component';
+import './app.scss';
+import EngineFormComponent from './components/engine-form.component/engine-form.component';
 
-export const link = createHttpLink({
+const link = createHttpLink({
   uri: "http://localhost:4000/graphql",
 });
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   cache: new InMemoryCache(),
   link,
   defaultOptions: {
@@ -27,10 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container fade-in">
         <ApolloProvider client={client}>
-          <h1>End Grain Cutting Board Cut List Calculator </h1>
-          <CutListFormComponent />
+          <h1>End Grain Cutting Board Planning Engine </h1>
+          <EngineFormComponent />
         </ApolloProvider>
       </div>
     )

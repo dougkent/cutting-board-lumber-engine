@@ -1,11 +1,11 @@
-import { ICutListVariables } from '../models/cut-list-variables';
-import { CutListService } from '../services/cut-list-service';
+import { IEngineRequest } from '../models/engine-request.model';
+import { CuttingBoardPlanningService } from '../services/cutting-board-engine.service';
 
-const service = new CutListService();
+const service = new CuttingBoardPlanningService();
 
 const root = {
-    cutList: (args: ICutListVariables) => {
-        return service.getCutList(args);
+    cuttingBoardPlan: (args: IEngineRequest) => {
+        return service.getCuttingBoardPlan(args);
     }
 };
 

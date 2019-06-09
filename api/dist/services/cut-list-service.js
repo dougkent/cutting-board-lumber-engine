@@ -18,16 +18,16 @@ class CutListService {
         if (shorterBlockDimension > 0.75 && shorterBlockDimension <= 1) {
             boardSize = board_size_1.BoardSizeEnum.FiveQtr;
         }
-        else if (shorterBlockDimension <= 1.25) {
+        else if (shorterBlockDimension > 1 && shorterBlockDimension <= 1.25) {
             boardSize = board_size_1.BoardSizeEnum.SixQtr;
         }
-        else if (shorterBlockDimension <= 1.75) {
+        else if (shorterBlockDimension > 1.25 && shorterBlockDimension <= 1.75) {
             boardSize = board_size_1.BoardSizeEnum.EightQtr;
         }
-        else if (shorterBlockDimension <= 2.75) {
+        else if (shorterBlockDimension > 1.75 && shorterBlockDimension <= 2.75) {
             boardSize = board_size_1.BoardSizeEnum.TwelveQtr;
         }
-        else {
+        else if (shorterBlockDimension > 2.75) {
             throw new Error('Invalid block dimension. Must be less than 2.75');
         }
         // Determine Number and Length of pieces
