@@ -7,7 +7,15 @@ const roughLumberThickness = Object.keys(RoughLumberThicknessEnum)
 
 const schema = buildSchema(`
     type Query {
-        cuttingBoardPlan(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CuttingBoardPlan
+        cuttingBoardPlan(input: CuttingBoardPlanRequest): CuttingBoardPlan
+    }
+
+    input CuttingBoardPlanRequest {
+        width: Float!,
+        depth: Float!,
+        thickness: Float!,
+        blockWidth: Float!,
+        blockDepth: Float!
     }
 
     type CuttingBoardPlan {

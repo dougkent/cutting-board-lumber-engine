@@ -83,7 +83,7 @@ class EngineFormComponent extends Component {
                         onChange={this.handleChange} />
                 </div>
 
-                <EngineResultsComponent variables={this.state} />
+                <EngineResultsComponent input={this.state} />
             </div>
         )
     }

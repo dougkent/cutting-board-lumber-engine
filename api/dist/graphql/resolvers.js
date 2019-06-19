@@ -4,7 +4,7 @@ const cutting_board_engine_service_1 = require("../services/cutting-board-engine
 const service = new cutting_board_engine_service_1.CuttingBoardPlanningService();
 const root = {
     cuttingBoardPlan: (args) => {
-        return service.getCuttingBoardPlan(args);
+        return service.getCuttingBoardPlan(args.input);
     }
 };
 exports.default = root;

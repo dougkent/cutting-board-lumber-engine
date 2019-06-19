@@ -7,7 +7,15 @@ const roughLumberThickness = Object.keys(rough_lumber_thickness_enum_1.RoughLumb
     .join(', ');
 const schema = graphql_1.buildSchema(`
     type Query {
-        cuttingBoardPlan(width: Float!, depth: Float!, thickness: Float!, blockWidth: Float!, blockDepth: Float!): CuttingBoardPlan
+        cuttingBoardPlan(input: CuttingBoardPlanRequest): CuttingBoardPlan
+    }
+
+    input CuttingBoardPlanRequest {
+        width: Float!,
+        depth: Float!,
+        thickness: Float!,
+        blockWidth: Float!,
+        blockDepth: Float!
     }
 
     type CuttingBoardPlan {
