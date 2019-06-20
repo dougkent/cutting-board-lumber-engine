@@ -1,18 +1,21 @@
-FROM node:10
+FROM node:12.4.0-alpine as build
 
-# Create app directory
 WORKDIR /ui-app
 
-#Install app dependencies
+ENV PATH /app/node_modules/.bin:$PATH
+
 COPY package*.json /ui-app/
 
-RUN npm i
+RUN npm i --silent
 
-#Bundle app source
 COPY . /ui-app/
 
 RUN npm run build
 
-EXPOSE 3000
+FROM nginx:1.16.0-alpine
 
-RUN serve -s build -l 3000
+COPY --from=build /ui-app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
