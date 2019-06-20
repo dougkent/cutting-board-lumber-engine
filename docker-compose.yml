@@ -1,22 +1,16 @@
-version: "3.7"
+version: '3.7'
+
 services:
   ui-app:
     build: ./ui
     restart: always
     ports:
-      - "3000:3000"
+      - '3000:80'
     links:
       - api-app
-    networks:
-      - cutting-board-calc-network
 
   api-app:
     build: ./api
     restart: always
     ports:
-      - "4000:4000"
-    networks:
-      - cutting-board-calc-network
-networks:
-  cutting-board-calc-network:
-    driver: bridge
+      - '4000:4000'

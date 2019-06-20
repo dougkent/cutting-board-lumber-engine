@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12.4.0-alpine
 
 # Create app directory
 WORKDIR /api-app
@@ -6,7 +6,7 @@ WORKDIR /api-app
 #Install App dependencies
 COPY package*.json /api-app/
 
-RUN npm i
+RUN npm i --silent
 
 #Bundle app source
 COPY . /api-app/
