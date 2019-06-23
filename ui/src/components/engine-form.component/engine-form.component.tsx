@@ -37,7 +37,7 @@ class EngineFormComponent extends Component {
                     <Input type="number"
                         placeholder="Width"
                         name='width'
-                        inputProps={{ step: 0.25, min: 1 }}
+                        inputProps={{ step: 0.25, min: 8 }}
                         value={this.state.width}
                         required
                         onChange={this.handleChange} />
@@ -47,7 +47,7 @@ class EngineFormComponent extends Component {
                     <Input type="number"
                         placeholder="Depth"
                         name='depth'
-                        inputProps={{ step: 0.25, min: 1 }}
+                        inputProps={{ step: 0.25, min: 8 }}
                         value={this.state.depth}
                         required
                         onChange={this.handleChange} />
@@ -57,7 +57,7 @@ class EngineFormComponent extends Component {
                     <Input type="number"
                         placeholder="Thickness"
                         name='thickness'
-                        inputProps={{ step: 0.125, min: 0.75 }}
+                        inputProps={{ step: 0.125, min: 0.75, max: 2.5 }}
                         value={this.state.thickness}
                         required
                         onChange={this.handleChange} />

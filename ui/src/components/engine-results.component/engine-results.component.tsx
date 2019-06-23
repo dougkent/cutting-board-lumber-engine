@@ -38,9 +38,9 @@ const EngineResultsComponent = (props: IEngineInput) => (
                     <h3>Board Thickness: {getDisplayBoardThickness(data.cuttingBoardPlan.roughLumberThickness)}</h3>
                     <h3>Build Process</h3>
                     <ol>
-                        <li>Mill rough boards to {data.cuttingBoardPlan.numberOfPieces} pieces {data.cuttingBoardPlan.pieceThickness} inches thick x {data.cuttingBoardPlan.pieceWidth} inches wide x {data.cuttingBoardPlan.pieceLength} inches long.</li>
-                        <li>Glue the pieces together into a {data.cuttingBoardPlan.panelWidth} inch wide panel.</li>
-                        <li>Crosscut panels into ${data.cuttingBoardPlan.panelCrossCutThickness} inch wide strips.</li>
+                        <li>Mill rough boards to <b>{data.cuttingBoardPlan.numberOfPieces}</b> pieces <b>{data.cuttingBoardPlan.pieceThickness} inches</b> thick x <b>{data.cuttingBoardPlan.pieceWidth} inches</b> wide x <b>{data.cuttingBoardPlan.pieceLength} inches</b> long.</li>
+                        <li>Glue the pieces together into a <b>{data.cuttingBoardPlan.panelWidth} inch</b> wide panel.</li>
+                        <li>Crosscut panels into <b>{data.cuttingBoardPlan.panelCrossCutThickness} inch</b> wide strips.</li>
                         <li>Rotate strips 90 degrees so engrain is facing up and down and glue strips together.</li>
                         <li>Sand and Finish.</li>
                         <li>Deliver to the client!</li>
