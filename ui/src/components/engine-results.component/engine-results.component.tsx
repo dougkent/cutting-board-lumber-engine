@@ -2,10 +2,11 @@ import React from 'react';
 import { Query } from 'react-apollo';
 
 import { IEngineResponse } from '../../models/engine-response.model';
-//import { IEngineRequest } from '../../models/engine-request.model';
 import { IEngineInput } from '../../models/engine-input.model';
 import { RoughLumberThicknessEnum } from '../../models/rough-lumber-thickness.enum';
 import engineQuery from './engine.query';
+
+import './engine-results.component.scss';
 
 function getDisplayBoardThickness(roughLumberThickness: RoughLumberThicknessEnum): string {
     switch (roughLumberThickness) {
@@ -33,7 +34,7 @@ const EngineResultsComponent = (props: IEngineInput) => (
                 if (loading || !data) return <h1>Loading...</h1>
                 if (error) return <h1>Something went wrong... {error.message}</h1>
 
-                return <div>
+                return <div className="results">
                     <h2>Board Feet: {data.cuttingBoardPlan.boardFeet}</h2>
                     <h3>Board Thickness: {getDisplayBoardThickness(data.cuttingBoardPlan.roughLumberThickness)}</h3>
                     <h3>Build Process</h3>
