@@ -1,8 +1,8 @@
-import { IEngineRequest } from '../models/engine-request.model';
-import { IEngineResponse } from '../models/engine-response.model';
-import { RoughLumberThicknessEnum } from '../models/rough-lumber-thickness.enum';
+import { IEngineRequest } from './models/engine-request.model';
+import { IEngineResponse } from './models/engine-response.model';
+import { RoughLumberThicknessEnum } from './models/rough-lumber-thickness.enum';
 
-export class CuttingBoardPlanningService {
+export class CuttingBoardPlanningEngine {
 
     public getCuttingBoardPlan(
         args: IEngineRequest

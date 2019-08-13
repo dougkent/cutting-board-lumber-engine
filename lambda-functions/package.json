@@ -1,0 +1,15 @@
+{
+  "name": "cutting-board-lumber-engine-lambda-functions",
+  "version": "1.0.0",
+  "scripts": {},
+  "keywords": [
+    "node",
+    "lambda",
+    "typescript"
+  ],
+  "author": "Doug Kent",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.7.1"
+  }
+}

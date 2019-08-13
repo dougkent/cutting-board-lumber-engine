@@ -1,0 +1,35 @@
+﻿schema {
+  query: Query
+}
+
+type CuttingBoardPlan {
+  # roughLumberThickness: RoughLumberThickness!
+  boardFeet: Int!
+  numberOfPieces: Int!
+  panelCrossCutThickness: Float!
+  panelWidth: Float!
+  pieceLength: Float!
+  pieceThickness: Float!
+  pieceWidth: Float!
+}
+
+type Query {
+  #  Get a single value of type 'Post' by primary key.
+  cuttingBoardPlan(input: CuttingBoardPlanRequest): CuttingBoardPlan
+}
+
+enum RoughLumberThickness {
+  EightQtr
+  FiveQtr
+  FourQtr
+  SixQtr
+  TwelveQtr
+}
+
+input CuttingBoardPlanRequest {
+  blockDepth: Float!
+  blockWidth: Float!
+  depth: Float!
+  thickness: Float!
+  width: Float!
+}
