@@ -1,0 +1,14 @@
+{
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "cutting-board-engine-develop-20190812211542-authRole",
+            "UnauthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-develop-20190812211542-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-develop-20190812211542-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "cutting-board-engine-develop-20190812211542-deployment",
+            "UnauthRoleName": "cutting-board-engine-develop-20190812211542-unauthRole",
+            "StackName": "cutting-board-engine-develop-20190812211542",
+            "StackId": "arn:aws:cloudformation:us-west-2:866938331794:stack/cutting-board-engine-develop-20190812211542/40e706e0-bd70-11e9-837c-063a4d9c7b3c"
+        }
+    }
+}

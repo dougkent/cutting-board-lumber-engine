@@ -1,6 +1,4 @@
-import gql from 'graphql-tag';
-
-const query = gql`
+const query = `
     query CuttingBoardPlan($input: CuttingBoardPlanRequest) {
         cuttingBoardPlan(input: $input){
             roughLumberThickness,

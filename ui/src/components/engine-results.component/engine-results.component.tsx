@@ -1,11 +1,19 @@
+// React
 import React from 'react';
-import { Query } from 'react-apollo';
 
+// AWS
+import Amplify, { graphqlOperation } from 'aws-amplify';
+import { Connect } from 'aws-amplify-react';
+import aws_exports from '../../aws-exports';
+
+// Cutting Board Lumber Engine
 import { IEngineResponse } from '../../models/engine-response.model';
-//import { IEngineRequest } from '../../models/engine-request.model';
 import { IEngineInput } from '../../models/engine-input.model';
 import { RoughLumberThicknessEnum } from '../../models/rough-lumber-thickness.enum';
 import engineQuery from './engine.query';
+
+// Configure
+Amplify.configure(aws_exports);
 
 function getDisplayBoardThickness(roughLumberThickness: RoughLumberThicknessEnum): string {
     switch (roughLumberThickness) {
@@ -25,13 +33,14 @@ function getDisplayBoardThickness(roughLumberThickness: RoughLumberThicknessEnum
 }
 
 const EngineResultsComponent = (props: IEngineInput) => (
-    <Query<IEngineResponse, IEngineInput>
-        query={engineQuery}
-        variables={props}>
+    <Connect query={graphqlOperation(engineQuery, props)}>
         {
-            ({ loading, error, data }) => {
+            ({ data, loading, error }: { data: IEngineResponse, loading: boolean, error: Array<Error> }) => {
                 if (loading || !data) return <h1>Loading...</h1>
-                if (error) return <h1>Something went wrong... {error.message}</h1>
+                if (error) {
+                    console.log(error);
+                    return <h1>Something went wrong...</h1>
+                }
 
                 return <div>
                     <h2>Board Feet: {data.cuttingBoardPlan.boardFeet}</h2>
@@ -48,7 +57,7 @@ const EngineResultsComponent = (props: IEngineInput) => (
                 </div>
             }
         }
-    </Query>
+    </Connect>
 );
 
 export default EngineResultsComponent
