@@ -1,7 +1,9 @@
 {
   "name": "cutting-board-lumber-engine-lambda-functions",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc"
+  },
   "keywords": [
     "node",
     "lambda",

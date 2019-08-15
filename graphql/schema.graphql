@@ -3,7 +3,6 @@
 }
 
 type CuttingBoardPlan {
-  # roughLumberThickness: RoughLumberThickness!
   boardFeet: Int!
   numberOfPieces: Int!
   panelCrossCutThickness: Float!
@@ -11,6 +10,7 @@ type CuttingBoardPlan {
   pieceLength: Float!
   pieceThickness: Float!
   pieceWidth: Float!
+  roughLumberThickness: RoughLumberThickness!
 }
 
 type Query {

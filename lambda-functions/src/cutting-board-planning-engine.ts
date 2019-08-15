@@ -43,6 +43,7 @@ export class CuttingBoardPlanningEngine {
         response.pieceWidth = longerBlockDimension;
         response.pieceLength = pieceLength;
         response.panelWidth = longerBlockBoardDimension;
+        response.panelCrossCutThickness = args.thickness;
 
         response.boardFeet = this.getBoardFeet(args.width, args.depth, args.thickness);
 

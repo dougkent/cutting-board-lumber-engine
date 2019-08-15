@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent } from 'react';
+import React from 'react';
 
 import Input from '@material-ui/core/Input';
 
@@ -6,7 +6,7 @@ import './engine-form.component.scss';
 import { IEngineRequest } from '../../models/engine-request.model';
 import EngineResultsComponent from '../engine-results.component/engine-results.component';
 
-class EngineFormComponent extends Component {
+class EngineFormComponent extends React.Component {
 
     state: IEngineRequest = {
         width: 12,
@@ -16,7 +16,7 @@ class EngineFormComponent extends Component {
         blockDepth: 1,
     };
 
-    handleChange = (event: ChangeEvent) => {
+    handleChange = (event: React.ChangeEvent) => {
         var element = event.target as HTMLInputElement;
         var key: string = element.name;
         var value: number = parseFloat(element.value);

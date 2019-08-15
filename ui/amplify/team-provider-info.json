@@ -1,14 +1,14 @@
 {
-    "develop": {
+    "master": {
         "awscloudformation": {
-            "AuthRoleName": "cutting-board-engine-develop-20190812211542-authRole",
-            "UnauthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-develop-20190812211542-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-develop-20190812211542-authRole",
+            "AuthRoleName": "cutting-board-engine-master-20190814202454-authRole",
+            "UnauthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-master-20190814202454-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::866938331794:role/cutting-board-engine-master-20190814202454-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "cutting-board-engine-develop-20190812211542-deployment",
-            "UnauthRoleName": "cutting-board-engine-develop-20190812211542-unauthRole",
-            "StackName": "cutting-board-engine-develop-20190812211542",
-            "StackId": "arn:aws:cloudformation:us-west-2:866938331794:stack/cutting-board-engine-develop-20190812211542/40e706e0-bd70-11e9-837c-063a4d9c7b3c"
+            "DeploymentBucketName": "cutting-board-engine-master-20190814202454-deployment",
+            "UnauthRoleName": "cutting-board-engine-master-20190814202454-unauthRole",
+            "StackName": "cutting-board-engine-master-20190814202454",
+            "StackId": "arn:aws:cloudformation:us-west-2:866938331794:stack/cutting-board-engine-master-20190814202454/7d2e8420-befb-11e9-be72-02f7a30bb7a6"
         }
     }
 }
